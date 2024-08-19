@@ -74,18 +74,13 @@ class _HomePageState extends State<HomePage> {
         title: Text("Home Page"),
       ),
       body: 
-      Column(
+      FastListView(
         children: [
-          FastListView(
-                  children: [
-                  Text("One"),
-                  Text("Two THree")
-                ],
-                reverse: true,
-                ),
-        ]
+        Text("One"),
+        Text("Two THree")
+      ],
+      reverse: true,
       ),
-      
       // Center(
       //   child: Column(
       //     mainAxisAlignment: MainAxisAlignment.center,
@@ -136,7 +131,7 @@ class FastListView extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return 
-    Expanded(child: 
+    Expanded(child: Center(child: 
       // children.isNotEmpty ? 
       children == null ? 
       ListView(
@@ -150,21 +145,7 @@ class FastListView extends StatelessWidget {
         padding:  padding,
       )
       : 
-      ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: 5,
-        itemBuilder: (context, index) {
-          return 
-          Shimmer.fromColors(
-          baseColor: Colors.grey.shade300,
-          highlightColor: Colors.grey.shade100,
-          enabled: true,
-          child: const SingleChildScrollView(
-            physics: NeverScrollableScrollPhysics(),
-            child: BannerPlaceholder()));
-        },
-      )
-      // Center(child: CircularProgressIndicator())
+      // CircularProgressIndicator()
       // Shimmer.fromColors(
       //   baseColor: Colors.red,
       //   highlightColor: Colors.yellow,
@@ -178,41 +159,41 @@ class FastListView extends StatelessWidget {
       //     ),
       //   ),
       // ),
-      
-      // Shimmer.fromColors(
-      //     baseColor: Colors.grey.shade300,
-      //     highlightColor: Colors.grey.shade100,
-      //     enabled: true,
-      //     child: const SingleChildScrollView(
-      //       physics: NeverScrollableScrollPhysics(),
-      //       child: Column(
-      //         crossAxisAlignment: CrossAxisAlignment.start,
-      //         mainAxisSize: MainAxisSize.max,
-      //         children: 
-      //         [
-      //           BannerPlaceholder(),
-      //           TitlePlaceholder(width: double.infinity),
-      //           SizedBox(height: 16.0),
-      //           ContentPlaceholder(
-      //             lineType: ContentLineType.threeLines,
-      //           ),
-      //           SizedBox(height: 16.0),
-      //           TitlePlaceholder(width: 200.0),
-      //           SizedBox(height: 16.0),
-      //           ContentPlaceholder(
-      //             lineType: ContentLineType.twoLines,
-      //           ),
-      //           SizedBox(height: 16.0),
-      //           TitlePlaceholder(width: 200.0),
-      //           SizedBox(height: 16.0),
-      //           ContentPlaceholder(
-      //             lineType: ContentLineType.twoLines,
-      //           ),
-      //         ],
-      //       ),
-      //     )
-      //     )
-    );
+      Shimmer.fromColors(
+          baseColor: Colors.grey.shade300,
+          highlightColor: Colors.grey.shade100,
+          enabled: true,
+          child: const SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                BannerPlaceholder(),
+                BannerPlaceholder(),
+                BannerPlaceholder(),
+                // TitlePlaceholder(width: double.infinity),
+                // SizedBox(height: 16.0),
+                // ContentPlaceholder(
+                //   lineType: ContentLineType.threeLines,
+                // ),
+                // SizedBox(height: 16.0),
+                // TitlePlaceholder(width: 200.0),
+                // SizedBox(height: 16.0),
+                // ContentPlaceholder(
+                //   lineType: ContentLineType.twoLines,
+                // ),
+                // SizedBox(height: 16.0),
+                // TitlePlaceholder(width: 200.0),
+                // SizedBox(height: 16.0),
+                // ContentPlaceholder(
+                //   lineType: ContentLineType.twoLines,
+                // ),
+              ],
+            ),
+          ))
+    ))
+    ;
   }
 }
 

@@ -4,7 +4,12 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   connectivity_plus_windows
+  desktop_lifecycle
+  desktop_multi_window
   screen_brightness_windows
+  screen_retriever
+  webview_windows
+  window_manager
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST
